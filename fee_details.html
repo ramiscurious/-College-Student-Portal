@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fee Details</title>
+    <link rel="stylesheet" type="text/css" href="fee-details.css">
+</head>
+<body>
+    <div>
+    <img src="https://www.giits.in/images/logo-1.png">
+</div>
+    <div class="page-container1">
+        <h2>Welcome to Student Portal</h2>
+        <div class="nav">
+            <a href="home.html">Home</a>
+            <a href="profile_page.html">Student Profile</a>
+            <a href="fee_details.html">Fee Details</a>
+            <a href="attendance_details.html">Attendance</a>
+            <a href="https://results.jntugv.edu.in/">Results</a>
+            <a href="management.pdf">About Us</a>
+            <a href="contact_page.html">Contact Us</a>
+            <a href="index.html">Sign Out</a>
+
+        </div>
+    <div class="fee-container">
+        <h2>Roll Number : 206E1A0506</h2>
+        <table>
+            <tr>
+                <th></th>
+                <th>Total Fee</th>
+                <th>Paid Fee</th>
+                <th>Due</th>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>₹5,000</td>
+                <td>₹2,500</td>
+                <td>₹2,500</td>
+            </tr>
+            <tr>
+                <td>Tuition Fee</td>
+                <td>₹3,000</td>
+                <td>₹1,500</td>
+                <td>₹1,500</td>
+            </tr>
+            <tr>
+                <td>Hostel Fee</td>
+                <td>₹1,500</td>
+                <td>₹750</td>
+                <td>₹750</td>
+            </tr>
+            <tr>
+                <td>University Fee</td>
+                <td>₹500</td>
+                <td>₹250</td>
+                <td>₹250</td>
+            </tr>
+        </table>
+        <button id="pay-button">Pay Fee</button>
+    </div>
+
+    <script>
+        // Add an event listener to the "Pay Fee" button to handle the redirection
+        document.getElementById("pay-button").addEventListener("click", function() {
+            window.location.href = "payment_selection_page.html"; // Redirect to the "pay_fee.html" page
+        });
+    </script>
+</body>
+</html>

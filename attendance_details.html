@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Details</title>
+    <link rel="stylesheet" type="text/css" href="attendance-details.css">
+    <script>
+    // Get all the semester tables
+    const semesterTables = document.querySelectorAll('.semester-table');
+
+    // Loop through each semester table
+    semesterTables.forEach(table => {
+        // Get the input fields for present days and calculate absent days and percentage
+        const presentInput = table.querySelector('td:nth-child(2)');
+        const absentCell = table.querySelector('td:nth-child(3)');
+        const percentageCell = table.querySelector('#ab');
+
+        // Calculate absent days and percentage
+        const totalDays = 90; // Assuming total number of working days is 90
+        presentInput.addEventListener('input', () => {
+            const presentDays = parseInt(presentInput.textContent);
+            const absentDays = totalDays - presentDays;
+            const percentage = (presentDays / totalDays) * 100;
+
+            // Update the absent days and percentage cells
+            absentCell.textContent = absentDays;
+            percentageCell.textContent = percentage.toFixed(2) + "%";
+
+            // Apply yellow background color if percentage is less than 50%
+            if (percentage < 50) {
+                table.style.backgroundColor = 'yellow';
+            } else {
+                table.style.backgroundColor = ''; // Remove background color if percentage is 50% or more
+            }
+        });
+    });
+</script>
+</head>
+<body>
+    <div>
+    <img src="https://www.giits.in/images/logo-1.png">
+</div>
+    <div class="page-container1">
+        <h2>Welcome to Student Portal</h2>
+        <div class="nav">
+            <a href="home.html">Home</a>
+            <a href="profile_page.html">Student Profile</a>
+            <a href="fee_details.html">Fee Details</a>
+            <a href="attendance_details.html">Attendance</a>
+            <a href="https://results.jntugv.edu.in/">Results</a>
+            <a href="management.pdf">About Us</a>
+            <a href="contact_page.html">Contact Us</a>
+            <a href="index.html">Sign Out</a>
+
+        </div>
+
+    <div class="attendance-container">
+
+        <h2>Student Attendance</h2>
+        <div class="semester-table">
+            <h3>Semester 1-1</h3>
+            <table>
+                <tr>
+                    <th>No. of Working Days</th>
+                    <th>Present</th>
+                    <th>Absent</th>
+                    <th>Percentage</th>
+                </tr>
+                <tr>
+                    <td>90</td>
+                    <td>80</td>
+                    <td>10</td>
+                    <td id="ab">88.89%</td>
+                </tr>
+            </table>
+        </div>
+        <div class="semester-table">
+            <h3>Semester 1-2</h3>
+            <table>
+                <tr>
+                    <th>No. of Working Days</th>
+                    <th>Present</th>
+                    <th>Absent</th>
+                    <th>Percentage</th>
+                </tr>
+                <tr>
+                    <td>90</td>
+                    <td>80</td>
+                    <td>10</td>
+                    <td id="ab">88.89%</td>
+                </tr>
+            </table>
+        </div>
+        <div class="semester-table">
+            <h3>Semester 2-1</h3>
+            <table>
+                <tr>
+                    <th>No. of Working Days</th>
+                    <th>Present</th>
+                    <th>Absent</th>
+                    <th>Percentage</th>
+                </tr>
+                <tr>
+                    <td>90</td>
+                    <td>80</td>
+                    <td>10</td>
+                    <td id="ab">88.89%</td>
+                </tr>
+            </table>
+        </div>
+        <div class="semester-table">
+            <h3>Semester 2-2</h3>
+            <table>
+                <tr>
+                    <th>No. of Working Days</th>
+                    <th>Present</th>
+                    <th>Absent</th>
+                    <th>Percentage</th>
+                </tr>
+                <tr>
+                    <td>90</td>
+                    <td>80</td>
+                    <td>10</td>
+                    <td id="ab">88.89%</td>
+                </tr>
+            </table>
+        </div>
+        <div class="semester-table">
+            <h3>Semester 3-1</h3>
+            <table>
+                <tr>
+                    <th>No. of Working Days</th>
+                    <th>Present</th>
+                    <th>Absent</th>
+                    <th>Percentage</th>
+                </tr>
+                <tr>
+                    <td>90</td>
+                    <td>80</td>
+                    <td>10</td>
+                    <td id="ab">88.89%</td>
+                </tr>
+            </table>
+        </div>
+        <div class="semester-table">
+            <h3>Semester 3-2</h3>
+            <table>
+                <tr>
+                    <th>No. of Working Days</th>
+                    <th>Present</th>
+                    <th>Absent</th>
+                    <th>Percentage</th>
+                </tr>
+                <tr>
+                    <td>90</td>
+                    <td>80</td>
+                    <td>10</td>
+                    <td id="ab">88.89%</td>
+                </tr>
+            </table>
+        </div>
+        <div class="semester-table">
+            <h3>Semester 4-1</h3>
+            <table>
+                <tr>
+                    <th>No. of Working Days</th>
+                    <th>Present</th>
+                    <th>Absent</th>
+                    <th>Percentage</th>
+                </tr>
+                <tr>
+                    <td>90</td>
+                    <td>80</td>
+                    <td>10</td>
+                    <td id="ab">88.89%</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Repeat the same structure for the other semesters -->
+        
+        <div class="semester-table">
+            <h3>Semester 4-2</h3>
+            <table>
+                <tr>
+                    <th>No. of Working Days</th>
+                    <th>Present</th>
+                    <th>Absent</th>
+                    <th>Percentage</th>
+                </tr>
+                <tr>
+                    <td>90</td>
+                    <td>75</td>
+                    <td>15</td>
+                    <td id="ab">83.33%</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

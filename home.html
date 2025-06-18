@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0; /* Remove default margin */
+            display: flex;
+            flex-direction: column; /* Align children in a column */
+            align-items: center; /* Center content horizontally */
+            justify-content: flex-start; /* Align content at the start of the flex container */
+            height: 100vh; /* 100% of viewport height */
+        }
+
+        .header {
+            margin-top: 30px;
+        }
+
+        .header img {
+            width: 200px; /* Set the width of the image */
+        }
+
+        .page-container {
+            border: 2px solid #4CAF50; /* Green border for the whole page */
+            padding: 20px 30px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+            text-align: center;
+            margin-top: 30px;
+        }
+
+
+        h2 {
+            color: #333;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .nav a {
+            display: block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+
+        .nav a:hover {
+            background-color: #45a049;
+        }
+        .updates {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
+        .updates:hover{
+            background-color: #F0F8FF;
+        }
+        .img{
+            align-self: center;
+            border:3px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <img src="http://giits.in/images/logo-1.png">
+</div>
+<br>
+<div class="page-container">
+        <h2>Welcome to Student Portal</h2>
+        <div class="nav">
+            <a href="profile_page.html">Student Profile</a>
+            <a href="fee_details.html">Fee Details</a>
+            <a href="attendance_details.html">Attendance</a>
+            <a href="https://results.jntugv.edu.in/">Results</a>
+            <a href="management.pdf">About Us</a>
+            <a href="contact_page.html">Contact Us</a>
+            <a href="index.html">Sign Out</a>
+
+        </div>
+        
+    </div>
+    <div class="updates">
+                    <center>
+            <h3>Daily Updates</h3>
+            <marquee direction="up">
+            <p>Here you can display daily news, events, and announcements related to our college.</p>
+            <p>Here you can display daily news, events, and announcements related to our college.</p>
+            <p>Here you can display daily news, events, and announcements related to our college.</p>
+            <p>Here you can display daily news, events, and announcements related to our college.</p>
+            <p>Here you can display daily news, events, and announcements related to our college.</p>            <!-- Add dynamic content here based on your daily updates -->
+        </marquee>
+    </center>
+        </div>
+</body>
+</html>

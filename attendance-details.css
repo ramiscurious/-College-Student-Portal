@@ -1,0 +1,106 @@
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0; /* Remove default margin */
+            display: flex;
+            flex-direction: column; /* Align children in a column */
+            align-items: center; /* Center content horizontally */
+            justify-content: flex-start; /* Align content at the start of the flex container */
+            height: 100vh; /* 100% of viewport height */
+        }
+
+        .header {
+            margin-top: 30px;
+        }
+
+        .header img {
+            width: 200px; /* Set the width of the image */
+        }
+
+        .page-container {
+            border: 2px solid #4CAF50; /* Green border for the whole page */
+            padding: 20px 30px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .page-container1 {
+            padding-bottom: 150px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .nav a {
+            display: block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+
+        .nav a:hover {
+            background-color: #45a049;
+        }
+.attendance-container {
+    border: 2px solid #4CAF50;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 20px;
+}
+.attendance-container:hover{
+    background-color: #fff;
+}
+
+h2 {
+    color: #333;
+    margin: 0;
+}
+
+.semester-table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+        }
+
+h3 {
+    color: #333;
+}
+
+table {
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+}
+
+
+th {
+    background-color: #7FB5D6; /* Sky blue background for headers */
+    color: #fff;
+}
+#ab {
+            background-color: yellow;
+        }

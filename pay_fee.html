@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <title>Make a Payment</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid #4CAF50;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Make a Payment</h1>
+
+    <form id="paymentForm">
+
+        <label for="payment_method">Payment Method:</label>
+        <select name="payment_method" id="payment_method" required>
+            <option value="UPI">UPI</option>
+        </select><br><br>
+
+        <button type="button" onclick="showPopup()">NEXT</button>
+    </form>
+
+    <script>
+
+        function showPopup() {
+    var popup = document.createElement("div");
+    popup.style.position = "fixed";
+    popup.style.width = "100%";
+    popup.style.height = "100%";
+    popup.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+    popup.style.top = "0";
+    popup.style.left = "0";
+    popup.style.display = "flex";
+    popup.style.justifyContent = "center";
+    popup.style.alignItems = "center";
+
+    var qrCodeDiv = document.createElement("div");
+    var qrCode = new QRCode(qrCodeDiv, {
+        text: "upi:" + "lucky.143123@axl",
+        width: 200,
+        height: 200
+    });
+
+    popup.appendChild(qrCodeDiv);
+    document.body.appendChild(popup);
+
+    // Close the popup on click
+    popup.addEventListener("click", function () {
+        document.body.removeChild(popup);
+        redirectToPayment(); // Redirect after closing the popup
+    });
+}
+
+    </script>
+</body>
+</html>

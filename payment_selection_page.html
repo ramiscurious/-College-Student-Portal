@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Fee Type</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 30px;
+        margin: 0;
+    }
+
+    .content-box {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        border: 2px solid #4CAF50;
+        border-radius: 5px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 10px;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    label {
+        font-size: 16px;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    input[type="number"] {
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 10px;
+        width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+
+    #payButton {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        transition: background-color 0.3s;
+    }
+
+    #payButton:hover {
+        background-color: #45a049;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="content-box">
+        <h1>Select Fee Type</h1>
+
+        <!-- Three buttons for fee types -->
+        <button id="tuitionFeeBtn">Tuition Fee</button>
+        <button id="hostelFeeBtn">Hostel Fee</button>
+        <button id="universityFeeBtn">University Fee</button>
+
+        <!-- Payment form -->
+        <form id="paymentForm" style="display: none;">
+            <label for="paymentAmount">Enter Amount to Pay (Minimum: ₹2500):</label>
+            <input type="number" id="paymentAmount" required>
+            <button type="button" id="payButton" required>Pay</button>
+        </form>
+    </div>
+
+    <script>
+        // Variable to store the selected fee type
+        var selectedFeeType = "";
+
+        // Function to handle button clicks and show payment form
+        function handleButtonClick(feeType) {
+            selectedFeeType = feeType;
+            // Display the payment form
+            document.getElementById('paymentForm').style.display = 'block';
+        }
+
+        // Function to handle payment button click and redirect to payment page
+        function redirectToPaymentPage() {
+            var paymentAmount = document.getElementById("paymentAmount").value;
+            if (paymentAmount.trim() === "" || isNaN(paymentAmount) || parseFloat(paymentAmount) < 2500) {
+                alert("Please enter a valid payment amount (Minimum: ₹2500).");
+            } else {
+                // Define the payment page URL (update with your actual payment page URL)
+                var paymentPageUrl = "pay_fee.html";
+                // Construct the redirect URL with fee type and payment amount as query parameters
+                var redirectUrl = paymentPageUrl + "?feeType=" + selectedFeeType + "&amount=" + paymentAmount;
+                // Redirect to the payment page with the selected fee type and payment amount
+                window.location.href = redirectUrl;
+            }
+        }
+
+        // Add click event listeners to the buttons and pay button
+        document.getElementById("tuitionFeeBtn").addEventListener("click", function () {
+            handleButtonClick("Tuition Fee");
+        });
+
+        document.getElementById("hostelFeeBtn").addEventListener("click", function () {
+            handleButtonClick("Hostel Fee");
+        });
+
+        document.getElementById("universityFeeBtn").addEventListener("click", function () {
+            handleButtonClick("University Fee");
+        });
+
+        document.getElementById("payButton").addEventListener("click", function () {
+            redirectToPaymentPage();
+        });
+    </script>
+</body>
+
+</html>
